@@ -18,7 +18,7 @@ const SocialMediaLinks = () => {
           initial={{ opacity: 0, scale: 1 }}
           animate={inView ? { x: 0, opacity: 1, scale: 1 } : {}}
           ref={ref}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, delay: 1}}
         >
           <FaWhatsapp size={100} className="mb-4 text-zinc-900" />
           <h4 className="font-bold">505-977-1146</h4>
@@ -28,7 +28,7 @@ const SocialMediaLinks = () => {
           initial={{ opacity: 0, scale: 1 }}
           animate={inView ? { x: 0, opacity: 1, scale: 1 } : {}}
           ref={ref}
-          transition={{ duration: 1, delay: .5 }}
+          transition={{ duration: 1, delay: 1.5 }}
         >
           <a href="https://www.facebook.com/REDTACOSHOP" target="_blank">
             <FaFacebook size={100} className="mb-4 text-zinc-900" />
@@ -40,7 +40,7 @@ const SocialMediaLinks = () => {
           initial={{ opacity: 0, scale: 1 }}
           animate={inView ? { x: 0, opacity: 1, scale: 1 } : {}}
           ref={ref}
-          transition={{ duration: 1, delay: 1 }}
+          transition={{ duration: 1, delay: 2 }}
         >
           <a href="https://www.instagram.com/redtaco_shop/" target="_blank">
             <FaInstagram size={100} className="mb-4 text-zinc-900" />

@@ -32,7 +32,7 @@ const Location = () => {
           <div className="flex-1 self-center max-w-sm">
             <motion.h3
               className="section-text z-50"
-              initial={{ x: 200, opacity: 0, scale: 1 }}
+              initial={{ x: -20, opacity: 0, scale: 1 }}
               animate={inView ? { x: 0, opacity: 1, scale: 1 } : {}}
               ref={ref}
             >
@@ -43,7 +43,7 @@ const Location = () => {
               </span>
             </motion.h3>
             <motion.div
-            initial={{ x: 200, opacity: 0, scale: 1 }}
+            initial={{ x: 20, opacity: 0, scale: 1 }}
             animate={inView ? { x: 0, opacity: 1, scale: 1 } : {}}
             ref={ref}
             transition={{ delay: 0.8 }}

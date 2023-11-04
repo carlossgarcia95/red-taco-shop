@@ -28,7 +28,7 @@ const About = () => {
         </div>
         <motion.div
           className="relative aspect-video"
-          initial={{ x: 200, opacity: 0, scale: 1 }}
+          initial={{ x: 20, opacity: 0, scale: 1 }}
           animate={inView ? { x: 0, opacity: 1, scale: 1 } : {}}
           ref={ref}
           transition={{ duration: 0.6 }}
