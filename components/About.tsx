@@ -31,7 +31,7 @@ const About = () => {
           initial={{ x: 20, opacity: 0, scale: 1 }}
           animate={inView ? { x: 0, opacity: 1, scale: 1 } : {}}
           ref={ref}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
           <Image
             quality={100}
