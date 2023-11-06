@@ -26,8 +26,7 @@ const MenuItems = () => {
                 fill
                 quality={100}
                 className="object-fit rounded-t-lg"
-                placeholder="blur"
-                blurDataURL={item.imageUrl}
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
               />
             </div>
             <div className="p-2 text-center rounded-lg">

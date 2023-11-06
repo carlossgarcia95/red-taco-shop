@@ -30,7 +30,7 @@ const MobileMenu = ({ navLinks }: { navLinks: NavLink[] }) => {
       )}
 
       {isOpen && (
-        <div className="flex flex-col gap-8 my-5 items-end grow">
+        <div className="flex flex-col gap-8 my-5 items-end grow z-40">
           {navLinks.map((link, index) => (
             <Link
               href={link.href}

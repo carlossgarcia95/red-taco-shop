@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="hidden md:flex">
           <DesktopMenu navLinks={navLinks} />
         </div>
-        <div className="flex flex-col md:hidden">
+        <div className="flex flex-col md:hidden z-50">
           <MobileMenu navLinks={navLinks}/>
         </div>
       </div>

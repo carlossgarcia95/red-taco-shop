@@ -12,13 +12,14 @@ const Favorites = () => {
       <div className="flex gap-4 overflow-x-auto mb-4">
         {favorites.map((item) => (
           <Card key={item.id}>
-            <div className="relative aspect-video w-44 md:w-80">
+            <div className="relative aspect-video w-44 md:w-72 ">
               <Image
                 src={item.imageUrl}
                 alt={item.name}
                 fill
                 quality={100}
                 className="object-fit rounded-t-lg"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
               />
             </div>
             <div className="p-2 text-center rounded-lg">

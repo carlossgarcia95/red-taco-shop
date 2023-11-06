@@ -66,12 +66,11 @@ const Menu = () => {
           {images.map((item, index) => (
             <motion.div
               key={index}
-              className={`bg-white shadow-xl rounded-lg flex flex-col h-full z-20`}
+              className={`bg-white shadow-xl rounded-lg flex flex-col z-20`}
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.5 }}
               variants={cardVariants}
-              style={{ marginTop: index * 8 }}
             >
               <div className="relative aspect-video bg-red-300 rounded-lg">
                 <Image
