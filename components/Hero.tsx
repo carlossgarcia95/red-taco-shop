@@ -3,6 +3,7 @@
 import ActionButtons from "@/components/ActionButtons";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { teko } from "@/components/ui/fonts";
 
 const Hero = () => {
   return (
@@ -13,9 +14,9 @@ const Hero = () => {
         fill
         className="object-fit blur-[70px]"
       />
-      <div className="container py-20 flex flex-col justify-center items-center gap-6 md:gap-10 text-center">
+      <div className="container py-20 flex flex-col justify-center items-center gap-6 text-center">
         <motion.h1
-          className="text-zinc-900 z-10 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium uppercase tracking-wider"
+          className={`${teko.className} text-zinc-900 z-10 text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-medium uppercase tracking-wider`}
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -23,7 +24,7 @@ const Hero = () => {
           Red Taco Shop
         </motion.h1>
         <motion.h2
-          className="text-zinc-00 z-10 text-3xl md:text-5xl font-extralight mb-2 md:mb-4"
+          className="text-zinc-00 z-10 text-3xl md:text-5xl font-extralight mb-5 md:mb-9"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 2 }}
@@ -32,15 +33,15 @@ const Hero = () => {
         </motion.h2>
 
         <motion.div
-          className="flex flex-col p-6 md:p-10 md:self-start border-2 bg-white rounded-lg border-red-700 md:max-w-xl lg:max-w-2xl gap-4 z-10"
+          className="flex flex-col p-6 md:p-10 md:self-start border-2 bg-zinc-100 border-red-700 rounded-lg md:max-w-xl lg:max-w-2xl gap-4 md:gap-8 z-10"
           initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0}}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 1,
           }}
         >
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 text-left">
-            The best birria tacos that money can buy.
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-red-700 text-center md:text-left">
+            Order now and try the best tacos that money can buy.
           </h3>
           <ActionButtons />
         </motion.div>

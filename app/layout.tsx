@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
 import { Toaster } from "sonner";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import "./globals.css";
 import GoogleAnalyticsScript from "./GoogleAnalyticsScript";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+import {inter} from '@/components/ui/fonts'
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Red Taco Shop",
@@ -21,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <GoogleAnalyticsScript />
-      <body className={inter.variable}>
+      <body className={`${inter.className} antialiased`}>
         <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-grow bg-zinc-50 pt-16">

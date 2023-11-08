@@ -47,8 +47,8 @@ const Menu = () => {
       id="menu"
       className="bg-gradient-to-r from-red-100 to-white w-full scroll-mt-16"
     >
-      <div className="container flex flex-col items-center py-5">
-        <div className="text-center space-y-6 mb-4">
+      <div className="container flex flex-col items-center pt-5 pb-10">
+        <div className="text-center space-y-6 mb-4 md:mb-8">
           <h3 className="section-heading">
             We offer only the{" "}
             <span className="font-black text-red-700">best</span>
@@ -94,7 +94,7 @@ const Menu = () => {
             href="/menu"
             className={buttonVariants({ variant: "secondary" })}
           >
-            See full menu <AiOutlineArrowRight className="ml-1" />
+            Full menu <AiOutlineArrowRight className="ml-1 font-bold" />
           </Link>
         </div>
       </div>

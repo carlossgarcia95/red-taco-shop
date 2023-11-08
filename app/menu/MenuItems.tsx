@@ -29,11 +29,8 @@ const MenuItems = () => {
                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
               />
             </div>
-            <div className="p-2 text-center rounded-lg">
+            <div className="p-4 text-center rounded-lg">
               <div className="font-bold">{item.name}</div>
-              <div className="text-orange-600 font-bold">
-                {formatPrice(item.price)}
-              </div>
             </div>
           </Card>
         ))}

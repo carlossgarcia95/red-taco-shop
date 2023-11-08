@@ -2,6 +2,7 @@ import React from "react";
 import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const SocialMediaLinks = () => {
   const [ref, inView] = useInView({
@@ -30,9 +31,9 @@ const SocialMediaLinks = () => {
           ref={ref}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <a href="https://www.facebook.com/REDTACOSHOP" target="_blank">
+          <Link href="https://www.facebook.com/REDTACOSHOP" target="_blank">
             <FaFacebook size={100} className="mb-4 text-zinc-900" />
-          </a>
+          </Link>
           <h4 className="font-bold">redtacoshop</h4>
         </motion.div>
         <motion.div
@@ -42,9 +43,9 @@ const SocialMediaLinks = () => {
           ref={ref}
           transition={{ duration: 1, delay: 1 }}
         >
-          <a href="https://www.instagram.com/redtaco_shop/" target="_blank">
+          <Link href="https://www.instagram.com/redtaco_shop/" target="_blank">
             <FaInstagram size={100} className="mb-4 text-zinc-900" />
-          </a>
+          </Link>
           <h4 className="font-bold">redtaco_shop</h4>
         </motion.div>
       </div>

@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 import Image from "next/image";
+import { teko } from "./ui/fonts";
 
 export type NavLink = {
   text: string;
@@ -33,7 +34,7 @@ const Navbar = () => {
           <DesktopMenu navLinks={navLinks} />
         </div>
         <div className="flex flex-col md:hidden z-50">
-          <MobileMenu navLinks={navLinks}/>
+          <MobileMenu navLinks={navLinks} />
         </div>
       </div>
     </nav>
