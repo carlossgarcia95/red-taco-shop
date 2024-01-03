@@ -12,6 +12,7 @@ const Hero = () => {
         src="/background.png"
         alt="background image"
         fill
+        priority
         className="object-fit blur-[70px]"
       />
       <div className="container py-20 flex flex-col justify-center items-center gap-6 text-center">

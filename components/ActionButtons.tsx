@@ -13,7 +13,7 @@ const ActionButtons = () => {
       <Link
         className={buttonVariants({
           size: "lg",
-          className: "py-8 text-base font-bold",
+          className: "py-8 text-xl font-bold",
         })}
         target="_blank"
         href={"https://red-taco-shop.square.site"}
@@ -24,7 +24,7 @@ const ActionButtons = () => {
         className={buttonVariants({
           variant: 'secondary',
           size: "lg",
-          className: "py-8 text-base font-bold",
+          className: "py-8 text-xl font-bold",
         })}
         target="_blank"
         href="https://www.doordash.com/store/red-taco-shop-food-truck-albuquerque-23580296/"

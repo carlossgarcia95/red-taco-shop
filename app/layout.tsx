@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
+import { inter } from "@/components/ui/fonts";
 import { Toaster } from "sonner";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import GoogleAnalyticsScript from "./GoogleAnalyticsScript";
-import {inter} from '@/components/ui/fonts'
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en">
       <GoogleAnalyticsScript />
       <body className={`${inter.className} antialiased`}>
         <div className="flex flex-col min-h-screen">

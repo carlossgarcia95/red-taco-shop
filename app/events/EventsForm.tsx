@@ -31,10 +31,12 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 
-import { Input } from "@/components/ui/input";
-import { toast } from "sonner";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const EventFormSchema = z.object({
   name: z.string(),
@@ -46,7 +48,7 @@ const EventFormSchema = z.object({
     "Special Event",
   ]),
   crowdSize: z.enum(["1 - 50", "50 - 100", "100 - 500", "500+"]),
-  email: z.string().email({ message: "Invalid email address" }).optional(),
+  email: z.string().email({ message: "Invalid email address" }),
 
   dob: z.date({
     required_error: "An event date is required",
@@ -64,23 +66,38 @@ export function EventForm() {
 
   const crowdSize = ["1 - 50", "50 - 100", "100 - 500", "500+"];
   const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof EventFormSchema>>({
     resolver: zodResolver(EventFormSchema),
   });
 
-  function onSubmit(data: z.infer<typeof EventFormSchema>) {
-    router.push("/");
-    console.log(data);
-    toast.success("Form sent for the following event", {
-      description: data.dob.toString(),
-    });
+  async function onSubmit(formData: z.infer<typeof EventFormSchema>) {
+    try {
+      setIsSubmitting(true);
+      const formattedDate = format(formData.dob, "MMM dd, yyyy");
+      const response = await axios.post("/api/sendEmail", {
+        formData,
+        formattedDate,
+      });
+      if (response.status === 200) {
+        router.push("/");
+        console.log(formData);
+        toast.success("Quote request sent for the following date:", {
+          description: format(formData.dob, "MMM dd, yyyy"),
+        });
+      }
+    } catch (error) {
+      toast.error("Something went wrong" + error);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
     <Card className="p-4">
       <div className="mb-4">
-        <p className="font-medium text-2xl">Book us for your event</p>
+        <p className="font-medium text-2xl">Book us for your event.</p>
         <p className="section-text">
           Fill out the form and get a personalized quote.
         </p>
@@ -232,7 +249,9 @@ export function EventForm() {
             )}
           />
 
-          <Button type="submit">Submit</Button>
+          <Button disabled={isSubmitting} type="submit">
+            {isSubmitting ? ("Sending...") : ("Submit")}
+          </Button>
         </form>
       </Form>
     </Card>

@@ -8,13 +8,14 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import axios from "axios";
+import { useState } from "react";
 import { toast } from "sonner";
 import { Textarea } from "./ui/textarea";
 
@@ -31,8 +32,19 @@ export function ContactForm() {
       message: "",
     },
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit = (formData: z.infer<typeof ContactFormSchema>) => {
+  const onSubmit = async (formData: z.infer<typeof ContactFormSchema>) => {
+    try {
+      setIsSubmitting(true);
+      const response = await axios.post("/api/sendEmail", formData);
+      if (response.status === 200)
+        toast.success("Your message has been sent successfully.");
+    } catch (error) {
+      toast.error("Something went wrong. " + error);
+    }
+    setIsSubmitting(false);
+    form.reset();
     toast.success("Your message has been sent successfully.");
     form.reset();
   };
@@ -71,7 +83,9 @@ export function ContactForm() {
               </FormItem>
             )}
           />
-          <Button type="submit" className="">Submit</Button>
+          <Button type="submit" className="">
+            Submit
+          </Button>
         </form>
       </Form>
     </div>

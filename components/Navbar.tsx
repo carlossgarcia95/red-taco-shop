@@ -13,8 +13,7 @@ export type NavLink = {
 const Navbar = () => {
   const router = useRouter();
   const navLinks: NavLink[] = [
-    { text: "Location", href: "/#location" },
-    { text: "Contact", href: "/#contact" },
+    { text: "Home", href: "/" },
     { text: "Menu", href: "/menu" },
     { text: "Events", href: "/events" },
   ];
