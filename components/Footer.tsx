@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
 
           <p className="text-xs self-center">
-            &copy; 2023 Red Taco Shop. All Rights Reserved
+            &copy; 2024 Red Taco Shop. All Rights Reserved
           </p>
         </div>
       </div>
